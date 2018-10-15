@@ -1,0 +1,15 @@
+
+using namespace std;
+int add1;
+int add2;
+suma totalamount;
+int main()
+
+{
+cout<<"Enter numberone"<<endl;
+int add1;
+cout<<"Enter number 2"<<endl;
+int add2;
+cout<<"total amount :"<<totalamount
+totalamount=add1+add2;
+}
