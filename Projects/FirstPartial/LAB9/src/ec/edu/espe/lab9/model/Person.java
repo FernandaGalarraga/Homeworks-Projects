@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe;
+package ec.edu.espe.lab9.model;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 /**
  *
- * @author import java.util.Scanner;
+ * @author Josselyne Gutierrez / Maria Fernanda Galarraga
  */
 public class Person {
     //BirthDay
@@ -27,34 +27,33 @@ public class Person {
     
     
    
-     
-    public void date (int day, int month, int year)
+
+    
+    public void calculateAge (int year, int month, int day, int bDay, int bMonth, int bYear, int aYear, int aMonth, int aDay)
     {
+        System.out.println("Enter the year of your birth");
+        Scanner a = new Scanner(System.in);
+        bYear = a.nextInt();
+        System.out.println("Enter the month of your birth");
+        Scanner ac = new Scanner(System.in);
+        bMonth = ac.nextInt();
+        
+        System.out.println("Enter the day of your birth");
+        Scanner bc = new Scanner(System.in);
+        bDay = bc.nextInt();
+       
         Calendar date1 = new GregorianCalendar();
         year = date1.get(Calendar.YEAR);
         month = date1.get(Calendar.MONTH);
         day = date1.get(Calendar.DAY_OF_MONTH);
-    }
-    
-    public void calculateAge (int year, int month, int day, int bDay, int bMonth, int bYear, int aYear, int aMonth, int aDay)
-    {
-        System.out.println("Ingrese el año de su nacimiento");
-        Scanner a = new Scanner(System.in);
-        bYear = a.nextInt();
-        System.out.println("Ingrese el mes de su nacimiento");
-        Scanner ac = new Scanner(System.in);
-        bMonth = ac.nextInt();
+        System.out.println( day +"month:"+ month + "day"+ year);
         
-        System.out.println("Ingrese el dia de su nacimiento");
-        Scanner bc = new Scanner(System.in);
-        bDay = bc.nextInt();
-       
         
         aYear=year-bYear;
         aMonth=month-bMonth;
         aDay=day-bDay;
         
-        System.out.println("Su edad es: \n" + aYear + aMonth + aDay);
+        System.out.println("Your age is: \n" + aYear);
         
     }
 

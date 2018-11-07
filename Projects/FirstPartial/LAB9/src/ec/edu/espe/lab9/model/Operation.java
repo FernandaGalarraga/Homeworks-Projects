@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe;
+package ec.edu.espe.lab9.model;
 
 import java.util.Scanner;
 
@@ -24,63 +24,45 @@ public class Operation {
 
     
     public int add(int operand1, int operand2){
-        System.out.println("Ingrese primer numero");
-        Scanner wc = new Scanner(System.in);
-        operand1 = wc.nextInt();
-        System.out.println("Ingrese segundo numero");
-        Scanner sc = new Scanner(System.in);
-        operand2 = sc.nextInt();
+   
         result = operand1 + operand2;
-                    System.out.println("El resultado es: " + result);
+                    System.out.println("The result is: " + result);
 
         return result;
     }
     public int substract(int operand1, int operand2){
-        System.out.println("Ingrese primer numero");
-        Scanner wc = new Scanner(System.in);
-        operand1 = wc.nextInt();
-        System.out.println("Ingrese segundo numero");
-        Scanner sc = new Scanner(System.in);
-        operand2 = sc.nextInt();
         operand2*=-1;
         result = add(operand1,operand2);
 
         return result;
     }
     public int mult(int operand1, int operand2){
-        System.out.println("Ingrese primer numero");
-        Scanner wc = new Scanner(System.in);
-        operand1 = wc.nextInt();
-        System.out.println("Ingrese segundo numero");
-        Scanner sc = new Scanner(System.in);
-        operand2 = sc.nextInt();
-        int cont=0;
-        while(cont <= operand2){
-            result = add(operand1, operand2);
-            cont=cont+1;
+        int acum=0;
+        for(int i=0; i<operand2; i++){
+            acum=acum+operand1;
         }
-        System.out.println("El resultado es: " + result);
+        result=acum;
+        System.out.println("The result is: " + result);
 
         return result;
     }
     public int div(int operand1, int operand2){
-        System.out.println("Ingrese primer numero");
-        Scanner wc = new Scanner(System.in);
-        operand1 = wc.nextInt();
-        System.out.println("Ingrese segundo numero");
-        Scanner sc = new Scanner(System.in);
-        operand2 = sc.nextInt();
-        int cont=0;
+         int cont=0;
         if (operand2 >0){
-            while(cont <= operand2){
-            result = add(operand1, -operand2);
+            while(operand1>=0){
+            operand1=operand1-operand2;
             cont=cont+1;
             }
+            cont --;
+         System.out.println("The result is: " + cont);
+         return cont;
             }else{
-            System.out.println("Ingrese otro numero"); 
+            System.out.println("Enter another number");
+            System.out.println("Enter the second number");
+        Scanner sc = new Scanner(System.in);
+        operand2 = sc.nextInt();
             }
-         System.out.println("El resultado es: " + result);
-         return result;
+        return 0;
         }
 
     /**

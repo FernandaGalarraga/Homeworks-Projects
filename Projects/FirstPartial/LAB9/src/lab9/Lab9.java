@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package lab9;
-import ec.edu.espe.Operation;
-import ec.edu.espe.Person;
+import ec.edu.espe.lab9.model.Operation;
+import ec.edu.espe.lab9.model.Person;
 import java.util.Scanner;
 
 /**
@@ -19,18 +19,28 @@ public class Lab9 {
      */
     public static void main(String[] args) {
         
-        /*Person person;
+        
+        Person person;
         person = new Person();
-        Scanner sc = new Scanner(System.in);
-        person.bYear= sc.nextInt();*/
+  
+        person.calculateAge(person.getYear(), person.getMonth(), person.getDay(), 0, 0 ,0 , 0, 0, 0);
+        
+        System.out.println("OPERATIONS");
+        int operand1;
+        int operand2;
+         System.out.println("Enter the first number");
+        Scanner wc = new Scanner(System.in);
+        operand1 = wc.nextInt();
+                System.out.println("Enter the second number");
+                Scanner sc = new Scanner(System.in);
+                operand2 = sc.nextInt();
         
         int result;
         Operation operation= new Operation(0,0,0);
-        result=operation.add(0, 0);
-        result=operation.substract(1, 1);
-        System.out.println("El resultado es:" +result);
-        result=operation.mult(1, 1);
-        result=operation.div(1, 1);
+        result=operation.add(operand1, operand2);
+        result=operation.substract(operand1, operand2);
+        result=operation.mult(operand1, operand2);
+        result=operation.div(operand1, operand2);
         
         
         
