@@ -33,11 +33,12 @@ public class FileManager {
                 {
                     BufferedWriter bw;
                 if(file.exists()){
-                    bw = new BufferedWriter(new FileWriter(file));
+                    bw = new BufferedWriter(new FileWriter(file,true));
                     bw.write(text);
 
                 }else{
-                    bw = new BufferedWriter(new FileWriter(file));
+                    file.createNewFile();
+                    bw = new BufferedWriter(new FileWriter(file,true));
                     bw.write(text);
                 }
                 bw.close();

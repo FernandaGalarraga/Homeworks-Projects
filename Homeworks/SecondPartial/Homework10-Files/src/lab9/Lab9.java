@@ -40,6 +40,7 @@ public class Lab9 {
             Scanner a = new Scanner(System.in);
             person.setBirthYear(a.nextInt());
             System.out.println("Enter the month of your birth");
+
             Scanner ac = new Scanner(System.in);
             person.setBirthMonth(ac.nextInt());
 
@@ -58,7 +59,7 @@ public class Lab9 {
         file.setName(cc.next());
         
         String text;
-        text=personName+"-"+person.getAgeDay()+"-"+person.getAgeMonth()+"-"+person.getAgeYear()+"-"+person.getBirthDay()+"-"+person.getBirthMonth()+"-"+person.getBirthYear();
+        text=personName+";"+person.getAgeDay()+";"+person.getAgeMonth()+";"+person.getAgeYear()+";"+person.getBirthDay()+";"+person.getBirthMonth()+";"+person.getBirthYear()+"\n";
         file.save(file.getName(), text);
         break;
             case 2: 
