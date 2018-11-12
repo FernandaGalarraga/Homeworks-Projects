@@ -26,7 +26,6 @@ public class Operation {
     public int add(int operand1, int operand2){
    
         result = operand1 + operand2;
-                    System.out.println("The result is: " + result);
 
         return result;
     }

@@ -11,6 +11,9 @@ import java.util.GregorianCalendar;
  * @author Josselyne Gutierrez / Maria Fernanda Galarraga
  */
 public class Person {
+    
+    private String name;
+    
     //BirthDay
     private int birthDay;
     private int birthMonth;
@@ -20,6 +23,9 @@ public class Person {
     private int ageDay;
     private int ageMonth;
     private int ageYear;
+    
+    
+
 
    
 
@@ -177,6 +183,20 @@ public class Person {
      */
     public void setAgeYear(int ageYear) {
         this.ageYear = ageYear;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
     
 }
