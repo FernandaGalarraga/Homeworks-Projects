@@ -4,116 +4,201 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.lab9.model;
-
-import ec.edu.espe.lab9.model.Operation;
-import java.util.Date;
-
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 /**
  *
- * @author Edwin
+ * @author Fernanda Galarraga
  */
 public class Person {
- //   String name;
-    int birthDay;
-    int birthMonth;
-    int birthYear;
     
-    int year;
-    int day;
-    int month;
+    private String name;
+    
+    //BirthDay
+    private int birthDay;
+    private int birthMonth;
+    private int birthYear;
+   
+    //AGE
+    private int ageDay;
+    private int ageMonth;
+    private int ageYear;
+    
+    
+    
+    public void calculateAge (int birthDay, int birthMonth, int birthYear, int ageDay, int ageMonth, int ageYear)
+    {
+        //Date
+        int year;
+        int month;
+        int day;
+       
+        Calendar date1 = new GregorianCalendar();
+        year = date1.get(Calendar.YEAR);
+        month = date1.get(Calendar.MONTH)+1;
+        day = date1.get(Calendar.DAY_OF_MONTH);
+       
+        ageDay=day-birthDay;
+        ageMonth=month-birthMonth;
+        ageYear=year-birthYear;
+        //System.out.println("Your age is: \n" +ageYear +" years, " +ageMonth +" months" +ageDay +" days");
+         
+        if(ageDay<0)
+        {
+            ageDay=30+ageDay;
+ 
+                ageMonth--;
+        }
+        
+        
+        if(ageMonth<0)
+        {
+            ageMonth=12+ageMonth;
+            ageYear--;
+        }
+        
+        setAgeDay(ageDay);
+        setAgeMonth(ageMonth);
+        setAgeYear(ageYear);
+        
+        
+        System.out.println("Your age is: \n" + "years :"+ageYear +" \nmonth :" +ageMonth +" \nday :" +ageDay);
+        
+    }
+    
+    public int validation(int birthDay, int birthMonth, int birthYear)
+    {
+        int year;
+        if (birthYear<0 || birthMonth<0 || birthDay<0)
+        {
+            System.out.println("The date isnt correct");
+            return 1;
+        }
+        else
+        {
+            Calendar date1 = new GregorianCalendar();
+            year = date1.get(Calendar.YEAR);
+            if(birthYear>year)
+            {
+                System.out.println("The date isnt correct, Enter again");
+                return 1;
+            }
+            
+        }
+        GregorianCalendar calendar = new GregorianCalendar();
+        if(calendar.isLeapYear(year)){
+            System.out.println("El año es bisiesto");
+        }else{
+            System.out.println("El año no es bisiesto");
+        }
+        return 0;  
+    }
 
-    int a,b;
-    
-    public void calculateAge(int birthDay,int birthMonth,int birthYear, int day, int month, int year){
-    Date date=new Date();
-    Operation operation = new Operation();
-    int yearActual=date.getYear()+1900;
-    int dayActual=date.getDay();
-    int monthActual=date.getMonth()+1;
-    
-    year=operation.substract(yearActual, birthYear);
-    month=operation.substract(monthActual, birthMonth);
-    day=operation.substract(dayActual, birthDay);
-    
-    if(day<=0){
-        day=30+day;
-        month--;
-    }
-    if(month<=0){
-        month=12+month;
-        year--;
-    }
-    if(month>=12){
-        month=0;
-        year++;
-    }
-    
-        System.out.println("Your are " +year+" years, "+month+" months and "+day+" days");  
-    }
-
-    public Person( int birthDay, int birthMonth, int birthYear, int year, int day, int month) {
+    public Person(int birthDay, int birthMonth, int birthYear, int ageDay, int ageMonth, int ageYear) {
         this.birthDay = birthDay;
         this.birthMonth = birthMonth;
         this.birthYear = birthYear;
-        this.year = year;
-        this.day = day;
-        this.month = month;
-    }
-    /*
-    public String getName() {
-        return name;
+        this.ageDay = ageDay;
+        this.ageMonth = ageMonth;
+        this.ageYear = ageYear;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-*/
+    /**
+     * @return the birthDay
+     */
     public int getBirthDay() {
         return birthDay;
     }
 
+    /**
+     * @param birthDay the birthDay to set
+     */
     public void setBirthDay(int birthDay) {
         this.birthDay = birthDay;
     }
 
+    /**
+     * @return the birthMonth
+     */
     public int getBirthMonth() {
         return birthMonth;
     }
 
+    /**
+     * @param birthMonth the birthMonth to set
+     */
     public void setBirthMonth(int birthMonth) {
         this.birthMonth = birthMonth;
     }
 
+    /**
+     * @return the birthYear
+     */
     public int getBirthYear() {
         return birthYear;
     }
 
+    /**
+     * @param birthYear the birthYear to set
+     */
     public void setBirthYear(int birthYear) {
         this.birthYear = birthYear;
     }
 
-    public int getYear() {
-        return year;
+    /**
+     * @return the ageDay
+     */
+    public int getAgeDay() {
+        return ageDay;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    /**
+     * @param ageDay the ageDay to set
+     */
+    public void setAgeDay(int ageDay) {
+        this.ageDay = ageDay;
     }
 
-    public int getDay() {
-        return day;
+    /**
+     * @return the ageMonth
+     */
+    public int getAgeMonth() {
+        return ageMonth;
     }
 
-    public void setDay(int day) {
-        this.day = day;
+    /**
+     * @param ageMonth the ageMonth to set
+     */
+    public void setAgeMonth(int ageMonth) {
+        this.ageMonth = ageMonth;
     }
 
-    public int getMonth() {
-        return month;
+    /**
+     * @return the ageYear
+     */
+    public int getAgeYear() {
+        return ageYear;
     }
 
-    public void setMonth(int month) {
-        this.month = month;
+    /**
+     * @param ageYear the ageYear to set
+     */
+    public void setAgeYear(int ageYear) {
+        this.ageYear = ageYear;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
     
 }
