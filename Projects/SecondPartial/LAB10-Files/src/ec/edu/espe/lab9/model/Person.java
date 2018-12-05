@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 /**
  *
- * @author Josselyne Gutierrez / Maria Fernanda Galarraga
+ * @author Fernanda Galarraga
  */
 public class Person {
     
@@ -25,10 +25,6 @@ public class Person {
     private int ageYear;
     
     
-
-
-   
-
     
     public void calculateAge (int birthDay, int birthMonth, int birthYear, int ageDay, int ageMonth, int ageYear)
     {
@@ -88,6 +84,12 @@ public class Person {
                 return 1;
             }
             
+        }
+        GregorianCalendar calendar = new GregorianCalendar();
+        if(calendar.isLeapYear(year)){
+            System.out.println("El año es bisiesto");
+        }else{
+            System.out.println("El año no es bisiesto");
         }
         return 0;  
     }

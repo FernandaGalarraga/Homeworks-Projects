@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Josselyne Gutierrez / Maria Fernanda Galarraga
+ * @author Fernanda Galarraga
  */
 public class Operation {
     private int operand1;
